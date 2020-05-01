@@ -14,8 +14,19 @@ We have used the open Medical Masks Dataset by Eden Social Welfare Foundation, T
 
 ## Results
 
-Here we have attached a few training and testing graphs!
+Here we have attached a few training and testing graphs:
 
+### Accuracy Per Class
+
+![alt text](https://github.com/gsethi2409/mask-detection-in-browser/blob/master/results/acc-per-class.png?raw=true)
+
+### Accuracy Per Epoch
+
+![alt text](https://github.com/gsethi2409/mask-detection-in-browser/blob/master/results/acc-per-epoch-plot.png?raw=true)
+
+### Loss Per Epoch
+
+![alt text](https://github.com/gsethi2409/mask-detection-in-browser/blob/master/results/acc-per-epoch-plot.png?raw=true)
 
 ## Authors
 
