@@ -1,0 +1,52 @@
+body{
+    background-color: #555555;
+}
+
+.wrapper{
+    /* background-color: #e4e4e4; */
+    box-shadow: 0 4px 8px 0 rgba(182, 153, 153, 0.2);
+    
+    margin:2.5rem;
+}
+
+
+.heading-wrapper{
+    background-color: #555555;
+    color:#ffffff;
+
+}
+
+
+
+
+.my-container{
+   
+}
+
+.web-cam-wrapper{
+    width:400px;
+    height:400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.my-text{
+    margin-top: 140px;
+    margin-bottom: 0;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -.45px;
+}
+
+.my-custom-button{
+    background-color: #555555 !important;
+    color:#ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+
+
+
+.start-button{
+    width:300px;
+}
