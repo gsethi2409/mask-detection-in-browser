@@ -8,6 +8,15 @@ Click here to experiment: https://gsethi2409.github.io/mask-detection-in-browser
 
 The system works in real-time and is great for integration with surveillance systems at public places. It is also a great learning resource.
 
+## Dataset
+
+We have used the open Medical Masks Dataset by Eden Social Welfare Foundation, Taiwan [https://www.kaggle.com/vtech6/medical-masks-dataset]
+
+## Results
+
+Here we have attached a few training and testing graphs!
+
+
 ## Authors
 
 * **Gunjan Sethi** - *Deep Learning Engineer*
