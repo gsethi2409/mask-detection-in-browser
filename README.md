@@ -26,7 +26,7 @@ Here we have attached a few training and testing graphs:
 
 ### Loss Per Epoch
 
-![alt text](https://github.com/gsethi2409/mask-detection-in-browser/blob/master/results/acc-per-epoch-plot.png?raw=true)
+![alt text](https://github.com/gsethi2409/mask-detection-in-browser/blob/master/results/loss-per-epoch-plot.png?raw=true)
 
 ## Authors
 
