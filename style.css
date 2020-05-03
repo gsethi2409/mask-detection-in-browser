@@ -1,18 +1,36 @@
 body{
     background-color: #555555;
+    font-family: 'Poppins';
 }
+
+.main-background-color{
+    background-color: #FF385C !important;
+}
+
+.white-color{
+    color:#ffffff;
+}
+
+
 
 .wrapper{
     /* background-color: #e4e4e4; */
-    box-shadow: 0 4px 8px 0 rgba(182, 153, 153, 0.2);
-    
-    margin:2.5rem;
+    /* box-shadow: 0 4px 8px 0 rgba(182, 153, 153, 0.2); 
+    margin:2.5rem; */
 }
 
+.header-text{
+    font-size: 16px !important;
+    line-height: 18px !important;
+}
+
+.main-heading{
+    
+}
 
 .heading-wrapper{
-    background-color: #555555;
-    color:#ffffff;
+    /* background-color: #555555;
+    color:#ffffff; */
 
 }
 
@@ -27,7 +45,11 @@ body{
     width:400px;
     height:400px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /* border-radius: 2.5rem; */
 
+}
+.web-cam-box{
+    border-radius: 2.5rem;
 }
 
 .my-text{
@@ -39,14 +61,26 @@ body{
 }
 
 .my-custom-button{
-    background-color: #555555 !important;
-    color:#ffffff !important;
-    border: 1px solid #555555 !important;
+    
+    /* border: 1px solid #555555 !important; */
+    border-color: none !important;
+    color: #ffffff !important;
+}
+
+.bottom-footer{
+    /* position: fixed; */
+    /* bottom: 0; */
 }
 
 
 
 
 .start-button{
-    width:300px;
+    width:400px;
+}
+
+.copyright-text{
+    font-size: 16px !important;
+    line-height: 18px !important;
+    color:#555555;
 }
