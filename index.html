@@ -1,104 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- Latest compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap"
-      rel="stylesheet"
-    /> -->
-    <title>Mask Detection</title>
-  </head>
-  <body class="m-0">
+<div>Teachable Machine Image Model</div>
+<button type="button" onclick="init()">Start</button>
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-    <header>
-      <nav class="navbar main-background-color ">
-        <span class="navbar-brand mb-0 h1 text-center m-auto font-weight-lighter header-text white-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis optio velit vero. </span>
-      </nav>
-    </header>
-    <!-- <div class="main-heading navbar">
-      <span class="navbar-brand mb-0 h1 text-center m-auto font-weight-lighter header-text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis optio velit vero. </span>
-    </div> -->
-    <div class="wrapper p-4">
-      <div
-        class="container heading-wrapper p-2 d-flex justify-content-center align-items-center"
-      >
-        <!-- <h1 class="my-text m-0 text-uppercase text-center">
-          Are you wearing a mask?
-        </h1> -->
-      </div>
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/G8UcIH6R2/";
 
-      
+    let model, webcam, labelContainer, maxPredictions;
 
-      <div
-        class="my-container p-2 d-flex flex-column justify-content-center align-items-center"
-      >
-        <div
-          class="web-cam-wrapper m-4 d-flex justify-content-center align-items-center"
-        >
-          <div id="webcam-container" class="web-cam-box">
-
-          </div>
-        </div>
-        <div class="start-button">
-          <button type="button" class="btn  white-color  btn-lg btn-block my-custom-button main-background-color white-color" onclick="init()">Go!</button>
-        </div>
-        <div id="label-container"></div>
-      </div>
-
-      
-    </div>
-    <hr>
-    <footer class="bottom-footer mt-4">
-        <div>
-            <p class="lead text-center  copyright-text">
-                &copy Gunjan 2020
-            </p>
-        </div>
-    </footer>
-    <!-- ************************************************** -->
-
-    <!-- Script tags start -->
-
-    <!-- Bootstrap CDN Links starts -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Bootsrap CDN Links ends -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-    <script type="text/javascript">
-      // More API functions here:
-      // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
-      // the link to your model provided by Teachable Machine export panel
-      const URL = "https://teachablemachine.withgoogle.com/models/G8UcIH6R2/";
-
-      let model, webcam, labelContainer, maxPredictions;
-
-      // Load the image model and setup the webcam
-      async function init() {
+    // Load the image model and setup the webcam
+    async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -111,7 +27,7 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(370, 370, flip); // width, height, flip
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -119,33 +35,25 @@
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) {
-          // and class labels
-          labelContainer.appendChild(document.createElement("div"));
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
         }
-      }
+    }
 
-      async function loop() {
+    async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
         window.requestAnimationFrame(loop);
-      }
+    }
 
-      // run the webcam image through the image model
-      async function predict() {
+    // run the webcam image through the image model
+    async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
-          const classPrediction =
-            prediction[i].className +
-            ": " +
-            prediction[i].probability.toFixed(2)*100 + "%";
-          labelContainer.childNodes[i].innerHTML = classPrediction;
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
         }
-      }
-    </script>
-  </body>
-</html>
-
-<!-- heelo sanjeev is here  checking -->
-<!-- HIIIII GUNJAN is here too whatsup-->
+    }
+</script>
